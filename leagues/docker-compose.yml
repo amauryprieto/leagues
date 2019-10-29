@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  db:
+    image: postgres
+    restart: always
+    ports:
+     - "5432:5432"
+    environment:
+      POSTGRES_DB: pdm_dev
+      POSTGRES_USER: pdm_dev
+      POSTGRES_PASSWORD: pdm_dev
+  db_test:
+    image: postgres
+    restart: always
+    ports:
+     - "54321:5432"
+    environment:
+      POSTGRES_DB: pdm_test
+      POSTGRES_USER: pdm_test
+      POSTGRES_PASSWORD: pdm_test
+
+
+
