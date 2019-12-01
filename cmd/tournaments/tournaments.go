@@ -9,7 +9,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/amauryprieto/pkg/tournaments"
+	"github.com/amauryprieto/leagues/tournaments"
 	"github.com/go-kit/kit/log"
 )
 
@@ -39,7 +39,7 @@ func main() {
 		c.logger.Log(err)
 	}
 
-	r := tournaments.NewUserRepository(db, c.logger)
+	r := tournaments.NewRepository(db, c.logger)
 	s := tournaments.NewService(r, c.logger)
 
 	mux := http.NewServeMux()
